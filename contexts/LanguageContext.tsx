@@ -23,7 +23,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setReady(false); // Set ready to false while fetching new language
     const fetchTranslations = async () => {
       try {
-        const response = await fetch(`./translations/${language}.json`);
+        const response = await fetch(`/translations/${language}.json`);
         if (!response.ok) {
           throw new Error(`Could not load ${language} translation file.`);
         }
