@@ -1,5 +1,6 @@
 
 import type { IpInfo } from '../types.ts';
+import cidrData from '../data/cidrs.json';
 
 // Helper function to convert an IP string to a 32-bit integer
 const ipToInt = (ip: string): number => {
@@ -118,19 +119,14 @@ const fetchIpInfo = async (ip: string): Promise<IpInfo> => {
     }
 };
 
-// Fetches the CIDR ranges from the JSON file
-const getCidrRanges = async (): Promise<string[]> => {
-    const response = await fetch('/data/cidrs.json');
-    if (!response.ok) {
-        throw new Error('Failed to load CIDR ranges data file.');
-    }
-    const data: { ranges: string[] } = await response.json();
-    return data.ranges;
+// Fetches the CIDR ranges from the imported JSON file
+const getCidrRanges = (): string[] => {
+    return cidrData.ranges;
 }
 
 // Generates a specified number of unique random IPs and fetches their info
 export const generateAndFetchIpInfos = async (count: number): Promise<IpInfo[]> => {
-  const ranges = await getCidrRanges();
+  const ranges = getCidrRanges();
   const generatedIps = new Set<string>();
 
   if (!ranges || ranges.length === 0) {
