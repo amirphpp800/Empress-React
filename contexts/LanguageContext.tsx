@@ -1,6 +1,8 @@
 
 import React, { createContext, useState, useEffect, useMemo } from 'react';
 import type { Language, Translations } from '../types.ts';
+import enTranslations from '../translations/en.json';
+import faTranslations from '../translations/fa.json';
 
 interface LanguageContextType {
   language: Language;
@@ -12,6 +14,11 @@ interface LanguageContextType {
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const allTranslations: Record<Language, Translations> = {
+  en: enTranslations,
+  fa: faTranslations,
+};
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
     return (localStorage.getItem('language') as Language) || 'en';
@@ -20,29 +27,23 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setReady(false); // Set ready to false while fetching new language
-    const fetchTranslations = async () => {
-      try {
-        const response = await fetch(`/translations/${language}.json`);
-        if (!response.ok) {
-          throw new Error(`Could not load ${language} translation file.`);
-        }
-        const data = await response.json();
-        setTranslations(data);
-        setReady(true);
-      } catch (error) {
-        console.error(error);
-        // Fallback to English on error
-        if (language !== 'en') {
-          setLanguage('en');
-        } else {
-          setTranslations({}); // Clear translations on error for english
-          setReady(true);
-        }
+    setReady(false);
+    try {
+      const data = allTranslations[language];
+      if (!data) {
+        throw new Error(`Translations for '${language}' not found.`);
       }
-    };
-
-    fetchTranslations();
+      setTranslations(data);
+    } catch (error) {
+      console.error(error);
+      // Fallback to English on any error
+      setTranslations(allTranslations.en);
+      if (language !== 'en') {
+        setLanguage('en');
+      }
+    } finally {
+      setReady(true);
+    }
   }, [language]);
 
   const setLanguage = (lang: Language) => {
