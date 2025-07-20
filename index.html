@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Geolocation Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#0D0D0D',
+              'brand-secondary': '#1A1A1A',
+              'brand-accent': '#3B82F6', // Replaced purple with blue-500
+              'brand-accent-hover': '#2563EB', // Replaced purple with blue-600
+              'brand-text': '#E0E0E0',
+              'brand-text-secondary': '#A0A0A0',
+            },
+            fontFamily: {
+              sans: ['Inter', 'Vazirmatn', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+      @keyframes fade-in-up { 
+        from { 
+          opacity: 0; 
+          transform: translateY(20px); 
+        } 
+        to { 
+          opacity: 1; 
+          transform: translateY(0); 
+        } 
+      }
+      .is-transitioning { 
+        animation: fade-out 0.25s ease-out forwards; 
+      }
+      .animate-fade-in { 
+        animation: fade-in 0.25s ease-in; 
+      }
+      .animate-card { 
+        opacity: 0; /* Start hidden */
+        animation: fade-in-up 0.5s ease-out forwards; 
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-primary text-brand-text font-sans">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
