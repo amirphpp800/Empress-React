@@ -1,6 +1,6 @@
-
 {
   "name": "IP Geolocation Generator",
   "description": "A modern web application that generates random IP addresses from predefined CIDR ranges and fetches their corresponding country and ISP information.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "prompt": ""
 }

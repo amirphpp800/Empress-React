@@ -1,14 +1,14 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { Button } from './components/Button';
-import { Spinner } from './components/Spinner';
-import { IpInfoCard } from './components/IpInfoCard';
-import { Notification } from './components/Notification';
-import { generateAndFetchIpInfos } from './services/ipService';
-import type { IpInfo } from './types';
-import { GlobeIcon, ServerIcon, WifiIcon } from './components/Icons';
-import { useTranslations } from './hooks/useTranslations';
+import { Header } from './components/Header.tsx';
+import { Footer } from './components/Footer.tsx';
+import { Button } from './components/Button.tsx';
+import { Spinner } from './components/Spinner.tsx';
+import { IpInfoCard } from './components/IpInfoCard.tsx';
+import { Notification } from './components/Notification.tsx';
+import { generateAndFetchIpInfos } from './services/ipService.ts';
+import type { IpInfo } from './types.ts';
+import { GlobeIcon, ServerIcon, WifiIcon } from './components/Icons.tsx';
+import { useTranslations } from './hooks/useTranslations.ts';
 
 const App: React.FC = () => {
   const [ipData, setIpData] = useState<IpInfo[]>([]);
