@@ -1,0 +1,52 @@
+{
+  "header": {
+    "title": {
+      "main": "IP Geolocation",
+      "secondary": "Generator"
+    },
+    "byline": "by Empress Team",
+    "telegramAriaLabel": "Join our Telegram Channel"
+  },
+  "app": {
+    "description": "Click the button to generate random IP addresses from our curated ranges and instantly see their geolocation and ISP details."
+  },
+  "button": {
+    "generate": "Generate IP Information",
+    "generating": "Generating..."
+  },
+  "spinner": {
+    "fetching": "Fetching data..."
+  },
+  "welcome": {
+    "title": "Welcome to IP Geolocation Generator",
+    "description": "Your results will appear here once you generate them."
+  },
+  "card": {
+    "ipAddress": "IP Address",
+    "country": "Country",
+    "isp": "ISP",
+    "copyAriaLabel": "Copy IP address"
+  },
+  "notification": {
+    "copied": "IP Address {{ip}} copied to clipboard!",
+    "copyFailed": "Failed to copy IP address."
+  },
+  "footer": {
+    "teamName": "Empress Team",
+    "telegramLink": "Join our Telegram Channel",
+    "copyright": "IP Geolocation Generator. All rights reserved.",
+    "attribution": "IP data provided by iplocation.net. Built with React and Tailwind CSS."
+  },
+  "error": {
+    "title": "Error",
+    "apiError": "Could not retrieve geolocation data. {{message}}"
+  },
+  "status": {
+    "serviceUnavailable": "Service Unavailable",
+    "apiConnectFail": "Failed to connect to API",
+    "dataNotAvailable": "Data Not Available",
+    "malformedResponse": "Invalid API Response",
+    "networkError": "Network Error",
+    "apiServiceFail": "Could not reach API service"
+  }
+}

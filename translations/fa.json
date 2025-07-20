@@ -1,0 +1,52 @@
+{
+  "header": {
+    "title": {
+      "main": "موقعیت یاب",
+      "secondary": "IP"
+    },
+    "byline": "توسط تیم امپرس",
+    "telegramAriaLabel": "به کانال تلگرام ما بپیوندید"
+  },
+  "app": {
+    "description": "برای تولید آدرس های IP تصادفی از محدوده های تعریف شده و مشاهده فوری موقعیت جغرافیایی و جزئیات ISP آنها، روی دکمه کلیک کنید."
+  },
+  "button": {
+    "generate": "تولید اطلاعات IP",
+    "generating": "در حال تولید..."
+  },
+  "spinner": {
+    "fetching": "در حال دریافت اطلاعات..."
+  },
+  "welcome": {
+    "title": "به تولید کننده موقعیت جغرافیایی IP خوش آمدید",
+    "description": "نتایج شما پس از تولید در اینجا نمایش داده می شوند."
+  },
+  "card": {
+    "ipAddress": "آدرس IP",
+    "country": "کشور",
+    "isp": "سرویس دهنده اینترنت",
+    "copyAriaLabel": "کپی آدرس IP"
+  },
+  "notification": {
+    "copied": "آدرس IP {{ip}} در کلیپ بورد کپی شد!",
+    "copyFailed": "کپی کردن آدرس IP ناموفق بود."
+  },
+  "footer": {
+    "teamName": "تیم امپرس",
+    "telegramLink": "به کانال تلگرام ما بپیوندید",
+    "copyright": "تولید کننده موقعیت جغرافیایی IP. تمامی حقوق محفوظ است.",
+    "attribution": "داده های IP توسط iplocation.net ارائه شده است. ساخته شده با React و Tailwind CSS."
+  },
+  "error": {
+    "title": "خطا",
+    "apiError": "بازیابی اطلاعات موقعیت جغرافیایی ممکن نبود. {{message}}"
+  },
+  "status": {
+    "serviceUnavailable": "سرویس در دسترس نیست",
+    "apiConnectFail": "اتصال به API ناموفق بود",
+    "dataNotAvailable": "اطلاعات موجود نیست",
+    "malformedResponse": "پاسخ API نامعتبر است",
+    "networkError": "خطای شبکه",
+    "apiServiceFail": "دسترسی به سرویس API امکان پذیر نیست"
+  }
+}
